@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PiSKEL-clone</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="src/styles/index.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+</head>
+<body>
+  <header class="header">
+    <div>
+      <span class="logo-text">PiSKEL</span>
+    </div>
+    <div class="new-piskel-title">
+      <span>New Piskel</span>
+    </div>
+    <div class="create-sprite-and-sign-in">
+      <div class="create-sprite button">
+        <span>Create Sprite</span>
+      </div>
+      <div class="sign-in button">
+        <span>Sign in</span>
+      </div>
+    </div>
+  </header>
+  <main class="container">
+    <div>
+      <div class="left-side-bar">
+        <div class="tools-bar">
+          <div class="pen-block">
+            <div id="pen-tool" class="pen-tool tool">
+              <div class="pen-tool-inner">
+              </div>
+            </div>
+          </div>
+          <div id="tools-block" class="tools-block">
+            <div id="paint-bucket" class="paint-bucket-tool tool">
+              <i class="fas fa-fill-drip"></i>
+            </div>
+            <div id="choose-color" class="colorpicker-tool tool">
+              <i class="fas fa-eye-dropper"></i>
+            </div>
+            <div id="eraser-tool" class="eraser-tool tool">
+              <i class="fas fa-eraser"></i>
+            </div>
+            <div id="stroke-tool" class="stroke-tool tool">
+              <i class="fas fa-slash"></i>
+            </div>
+            <div id="move-tool" class="move-tool tool">
+              <i class="fas fa-arrows-alt"></i>
+            </div>
+            <div id="rectangle-tool" class="rectangle-tool tool">
+              <i class="far fa-square"></i>
+            </div>
+            <div id="circle-tool" class="circle-tool tool">
+              <i class="far fa-circle"></i>
+            </div>
+            <div id="sepia-tool" class="sepia-tool tool">
+              <i class="fas fa-adjust"></i>
+            </div>
+            <div id="dithering-tool" class="dithering-tool tool">
+              <i class="fas fa-chess-board"></i>
+            </div>
+            <div id="selection-tool" class="selection-tool tool">
+              <i class="fas fa-expand"></i>
+            </div>
+            <div id="invert-tool" class="invert-tool tool">
+              <i class="fas fa-magic"></i>
+            </div>
+            <div id="grayscale-tool" class="grayscale-tool tool">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <div id="flipvert-tool" class="flipvert-tool tool">
+              <i class="fas fa-grip-lines-vertical"></i>
+            </div>
+            <div id="fliphor-tool" class="fliphor-tool tool">
+              <i class="fas fa-grip-lines"></i>
+            </div>
+          </div>
+          <div class="colors-block">
+            <div class="colors-block-first">
+              <div>
+                <div id="current-color" class="current-color"></div>
+              </div>
+            </div>
+            <div id="colors-block-second">
+              <input type="color" id="choose-leftclick-color" class="color">
+              <input type="color" id="choose-rightclick-color" class="color" value="#ffffff">
+            </div>
+          </div>
+        </div>
+        <div class="frame-block-wrapper">
+          <div id="frame-block" class="frame-block">
+          </div>
+          <div id="button-wrapper" class="add-button-wrapper">
+            <div class="add-button">
+              <span class="inner-button-text">+</span><span class="inner-button-text">Add new frame</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="keyboard-shortcuts-block">
+        <span id="keyboard-shortcuts"><i class="far fa-keyboard"></i></span>
+        <div class="keyboard-shortcuts-wrapper">
+          <div class="keyboard-shortcuts">
+            <div>
+              <div><span>Tools</span></div>
+              <div class="tools-shortcuts">
+                <label>Paint bucket<input class="shortcut-input" type="text" name="bucket" value="B"></label>
+              </div>
+              <div class="tools-shortcuts">
+                <label>Pen<input  class="shortcut-input" type="text" name="pen" value="P"></label>
+              </div>
+              <div>
+                <label>Stroke tool<input class="shortcut-input" type="text" name="pen" value="L"></label>
+              </div>
+              <div>
+                <label>Circle<input class="shortcut-input" type="text" name="pen" value="O"></label>
+              </div>
+              <div>
+                <label>Rectangle<input class="shortcut-input" type="text" name="pen" value="R"></label>
+              </div>
+              <div>
+                <label>Dithering<input class="shortcut-input" type="text" name="pen" value="D"></label>
+              </div>
+              <div>
+                <label>Eraser<input class="shortcut-input" type="text" name="pen" value="E"></label>
+              </div>
+              <div>
+                <label>Flip horizontally<input class="shortcut-input" type="text" name="pen" value="H"></label>
+              </div>
+              <div>
+                <label>Flip vertically<input class="shortcut-input" type="text" name="pen" value="V"></label>
+              </div>
+              <div>
+                <label>Color picker<input class="shortcut-input" type="text" name="pen" value="C"></label>
+              </div>
+              <div>
+                <label>Invert<input class="shortcut-input" type="text" name="pen" value="I"></label>
+              </div>
+              <div>
+                <label>Grayscale<input class="shortcut-input" type="text" name="pen" value="G"></label>
+              </div>
+              <div>
+                <label>Sepia<input class="shortcut-input" type="text" name="pen" value="S"></label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="canvas-wrapper" class="canvas-wrapper">
+      <div class="size-coords">
+        <div id="size">
+        </div>
+        <div id="coords">
+        </div>
+      </div>
+    </div>
+    <div>
+      <div>
+        <div id="canvas-preview-wrapper" class="canvas-preview-wrapper">
+          <canvas id="canvas-preview" class="canvas-preview" width="300" height="300"></canvas>
+        </div>
+        <div id='fps-range-wrapper'>
+          <input type="range"  value="12" min="1" max="24" id="fps-range" class="fps-range" step="1">
+          <div id="current-speed"></div>
+        </div>
+        <div id="fullscreen" class="fullscreen">
+          <span>Fullscreen</span>
+        </div>
+      </div>
+      <div id='resize-block' class="resize-block settings">
+        <select id="size-list">
+          <option class="size-item" value="32">32 X 32</option>
+          <option class="size-item" value="64">64 X 64</option>
+          <option class="size-item" value="128">128 X 128</option>
+        </select>
+      </div>
+      <div class="layers-block-wrapper">
+        <div id="layers-block">
+        </div>
+        <div id="add-layer-button-wrapper" class="add-button-wrapper">
+          <div class="add-button">
+            <span class="inner-button-text">+</span><span class="inner-button-text">Add new layer</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script type="text/javascript" src="app.bundle.js"></script>
+</body>
+</html>
